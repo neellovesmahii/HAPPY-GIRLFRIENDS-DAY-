@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Mahii ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --red: #ff3159;
+  --pink: #ff7896;
+  --bg: #090609;
+  --muted: #d3b7c0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bg);
+  color: #fff0f4;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, #52132355, transparent 65%),
+              radial-gradient(ellipse at 90% 90%, #3d0d2850, transparent 55%);
+  z-index: -2;
+  pointer-events: none;
+}
+#hearts {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+.heart {
+  position: absolute;
+  bottom: -50px;
+  color: #ff3159;
+  animation: floatUp linear forwards;
+  text-shadow: 0 0 15px #ff3159;
+}
+@keyframes floatUp {
+  to { transform: translateY(-115vh) rotate(360deg); opacity: 0; }
+}
+.screen {
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 20px;
+}
+.content {
+  width: min(100%, 650px);
+  margin: 0 auto;
+  text-align: center;
+}
+.eyebrow {
+  color: var(--pink);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+.script {
+  font-family: 'Great Vibes', cursive;
+  color: var(--pink);
+  font-weight: normal;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 9vw, 70px);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(27px, 7vw, 42px);
+  margin-bottom: 22px;
+}
+p { color: var(--muted); line-height: 1.9; font-size: 14px; }
+.glow-heart {
+  font-size: 75px;
+  margin: 20px 0;
+  display: inline-block;
+  filter: drop-shadow(0 0 20px #ff3159);
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.16); }
+}
+.btn {
+  display: inline-block;
+  border: 1px solid #ff5275;
+  color: white;
+  background: linear-gradient(135deg, #9d1738, #e52854);
+  padding: 14px 26px;
+  border-radius: 40px;
+  margin: 22px 5px 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 0 22px #e5285435;
+  transition: .3s;
+}
+.btn:hover { transform: translateY(-3px); }
+section {
+  width: 100%;
+  padding: 75px 20px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.card {
+  width: 100%;
+  background: linear-gradient(145deg, #211019, #100a0e);
+  border: 1px solid #76243e70;
+  border-radius: 22px;
+  padding: 28px 22px;
+  box-shadow: 0 10px 40px #0008;
+  max-width: 570px;
+  margin: 0 auto;
+}
+.divider {
+  width: 70px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ff5275, transparent);
+  margin: 25px auto;
+}
+.envelope {
+  width: 180px;
+  height: 125px;
+  background: #a91e42;
+  margin: 35px auto 20px;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 35px #ff315933;
+  transition: transform .4s;
+}
+.envelope:hover { transform: scale(1.04); }
+.envelope::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 90px solid transparent;
+  border-right: 90px solid transparent;
+  border-top: 72px solid #ed4266;
+  transform-origin: top;
+  transition: transform .7s;
+  z-index: 2;
+}
+.envelope.open::before { transform: rotateX(180deg); }
+.envelope::after {
+  content: "♥";
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  z-index: 3;
+  transition: opacity .3s;
+}
+.envelope.open::after { opacity: 0; }
+.letter {
+  display: none;
+  width: 100%;
+  max-width: 530px;
+  text-align: left;
+  background: #fff0f3;
+  color: #571b2d;
+  border-radius: 15px;
+  padding: 25px 22px;
+  margin: 22px auto 0;
+  animation: appear .7s ease;
+}
+.letter p { color: #652c3e; margin: 12px 0; }
+.letter .sign {
+  font-family: 'Great Vibes', cursive;
+  font-size: 30px;
+  color: #c51f49;
+  text-align: right;
+}
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 25px auto 0;
+  width: 100%;
+}
+.reason {
+  background: #200e17;
+  border: 1px solid #76243e70;
+  border-radius: 15px;
+  padding: 20px 12px;
+  min-height: 105px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: .3s;
+}
+.reason:hover {
+  transform: translateY(-4px);
+  border-color: #ff5275;
+  background: #34101e;
+}
+.reason span:first-child { font-size: 26px; }
+.reason span:last-child { font-size: 12px; color: #f4c8d5; }
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hugbox {
+  background: radial-gradient(ellipse, #5b142c55, #140a10);
+  border: 1px solid #9f284b;
+  border-radius: 24px;
+  padding: 35px 22px;
+  width: 100%;
+  max-width: 570px;
+  margin: 0 auto;
+}
+#hugMessage { display: none; margin-top: 22px; animation: appear .7s ease; }
+.hug { font-size: 65px; display: block; margin: 15px; animation: pulse 1.8s infinite; }
+.giftbox {
+  background: linear-gradient(145deg, #321020, #10080d);
+  border: 1px solid #a52b4f;
+  padding: 35px 22px;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 570px;
+  margin: 0 auto;
+  box-shadow: 0 0 50px #a61b3b25;
+}
+.gift {
+  font-size: 85px;
+  display: inline-block;
+  cursor: pointer;
+  transition: .4s;
+  filter: drop-shadow(0 0 20px #ff315944);
+}
+.gift:hover { transform: scale(1.15) rotate(-8deg); }
+#giftMessage, #finalMessage { display: none; margin-top: 25px; animation: appear .8s ease; }
+footer {
+  text-align: center;
+  padding: 30px 10px 45px;
+  color: #9d697a;
+  font-size: 11px;
+}
+@media (max-width: 480px) {
+  .screen { padding: 30px 18px; }
+  section { padding: 60px 18px; }
+  .card { padding: 25px 18px; }
+  .btn { padding: 13px 21px; }
+  .reason { min-height: 95px; }
+}
+
+/* EXTRA CUTE SURPRISE */
+.cute-box {
+  width: 100%;
+  max-width: 570px;
+  margin: 0 auto;
+  padding: 30px 22px;
+  border: 1px solid #a52b4f;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #29101c, #110910);
+  box-shadow: 0 0 45px #a61b3b20;
+}
+.cute-bear {
+  font-size: 66px;
+  display: inline-block;
+  animation: bearBounce 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 14px #ff789633);
+}
+@keyframes bearBounce {
+  0%,100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-9px) rotate(3deg); }
+}
+.treats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+.treat-btn {
+  background: #351321;
+  color: #ffeaf0;
+  border: 1px solid #a84462;
+  border-radius: 16px;
+  padding: 12px 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  transition: .25s;
+}
+.treat-btn:hover, .treat-btn:focus {
+  background: #69203b;
+  transform: translateY(-3px);
+  outline: none;
+  border-color: #ff7896;
+}
+#treatMessage {
+  display: none;
+  margin-top: 20px;
+  padding: 17px;
+  border-radius: 16px;
+  background: #fff0f3;
+  color: #8e2344;
+  animation: appear .5s ease;
+}
+#treatMessage p { color: #652c3e; }
+
+
+/* THE BIG FINAL LOVE LETTER */
+.big-letter-wrap {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.big-letter {
+  display: none;
+  width: 100%;
+  margin: 25px auto 0;
+  padding: clamp(24px, 5vw, 46px);
+  text-align: left;
+  border: 1px solid #b94766;
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at top right, #8d23402b, transparent 50%),
+    linear-gradient(145deg, #fff2f5, #ffe5ec);
+  color: #542033;
+  box-shadow: 0 18px 55px #0008, 0 0 35px #ff315922;
+  animation: appear .8s ease;
+}
+.big-letter h3 {
+  font-family: 'Great Vibes', cursive;
+  color: #c51f49;
+  font-weight: normal;
+  font-size: clamp(35px, 8vw, 49px);
+  text-align: center;
+  margin-bottom: 20px;
+}
+.big-letter p {
+  color: #633347;
+  font-size: clamp(13px, 3.5vw, 15px);
+  line-height: 2;
+  margin: 0 0 15px;
+}
+.big-letter .letter-end {
+  color: #c51f49;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(27px, 6vw, 36px);
+  text-align: right;
+  margin-top: 22px;
+}
+.big-letter .date-note {
+  text-align: center;
+  color: #a35c73;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+</style>
+</head>
+<body>
+<div id="hearts"></div>
+
+<div class="screen" id="home">
+  <div class="content">
+    <div class="eyebrow">A little surprise for someone special</div>
+    <div class="glow-heart">❤️</div>
+    <h1>Happy Girlfriend's Day,<br><span class="script">Mahii</span></h1>
+    <p>To my BUBU BBY CUTU, my favourite person and the girl who makes my world beautiful.</p>
+    <button class="btn" onclick="goTo('letterSection')">Open your surprise 💌</button>
+    <div class="divider"></div>
+    <p style="font-size:11px">Made with love, just for you ♡</p>
+  </div>
+</div>
+
+<section id="letterSection">
+  <div class="content">
+    <div class="eyebrow">A letter from my heart</div>
+    <h2>For my <span class="script">Bubu</span> 💌</h2>
+    <p>There's something I want you to read...</p>
+    <div class="envelope" id="envelope" onclick="openLetter()"></div>
+    <p style="font-size:12px">Tap the envelope to open your letter</p>
+    <div class="letter" id="letter">
+      <h2 style="font-size:27px;color:#c51f49">My dearest Mahii, ❤️</h2>
+      <p>I don't think words will ever be enough to explain how special you are to me.</p>
+      <p>You make me smile in ways I can't explain. Even the smallest things become special when they involve you.</p>
+      <p>I love your smile, your little habits, your cute expressions and all those tiny things that make you YOU.</p>
+      <p>If I could give you one thing in life, it would be the ability to see yourself through my eyes. Then you'd understand just how precious you are to me.</p>
+      <p>I don't need every day to be perfect. I just want to make beautiful memories with you, laugh over silly things and keep finding new reasons to love you.</p>
+      <p>You're my favourite person, my comfort and my BUBU BBY CUTU. 🥹❤️</p>
+      <div class="sign">Forever your biggest fan ❤️</div>
+    </div>
+  </div>
+</section>
+
+<section id="reasonsSection">
+  <div class="content">
+    <div class="eyebrow">A little list for you</div>
+    <h2>10 reasons why I <span class="script">love you</span></h2>
+    <p>And honestly, I could write a thousand more. 💗</p>
+    <div class="reasons">
+      <div class="reason"><span>🥹</span><span>Your adorable smile</span></div>
+      <div class="reason"><span>💗</span><span>Your beautiful heart</span></div>
+      <div class="reason"><span>🌷</span><span>Your little habits</span></div>
+      <div class="reason"><span>🫶</span><span>The way you care</span></div>
+      <div class="reason"><span>💕</span><span>Your cute expressions</span></div>
+      <div class="reason"><span>✨</span><span>You make me happy</span></div>
+      <div class="reason"><span>🥰</span><span>Your lovely personality</span></div>
+      <div class="reason"><span>🧸</span><span>Being my BUBU</span></div>
+      <div class="reason"><span>❤️</span><span>Every moment with you</span></div>
+      <div class="reason"><span>♾️</span><span>Simply being YOU</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="hugSection">
+  <div class="content">
+    <div class="eyebrow">A little warmth for you</div>
+    <h2>Come here, <span class="script">Bubu</span> 🫂</h2>
+    <div class="hugbox">
+      <span class="hug">🫂</span>
+      <p>If I were with you right now, I'd give you the biggest, warmest hug.</p>
+      <button class="btn" onclick="giveHug()">Get your virtual hug 🫂</button>
+      <div id="hugMessage">
+        <h2 class="script" style="font-size:38px">Sending you a big hug! 💗</h2>
+        <p>Imagine me holding you close and reminding you how much you mean to me.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="giftSection">
+  <div class="content">
+    <div class="eyebrow">A special surprise</div>
+    <h2>A little gift for <span class="script">you</span> 🎁</h2>
+    <div class="giftbox">
+      <p>I've kept one more surprise for you.</p>
+      <div class="divider"></div>
+      <div class="gift" onclick="openGift()">🎁</div>
+      <p style="font-size:12px;margin-top:12px">Tap the gift to unwrap it</p>
+      <div id="giftMessage">
+        <div class="divider"></div>
+        <div style="font-size:48px">💐</div>
+        <h2 class="script" style="font-size:40px">A thousand flowers for you!</h2>
+        <p>If every flower represented one reason you make me happy, this garden would never be big enough. 🌹</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="finalSection">
+  <div class="content">
+    <div class="eyebrow">One last little surprise</div>
+    <div class="giftbox">
+      <div class="glow-heart" style="font-size:60px">❤️</div>
+      <h2 style="font-size:32px">One more thing, <span class="script">Bubu</span></h2>
+      <p>Before you leave, there's one last message waiting just for you.</p>
+      <button class="btn" onclick="revealFinal()">Open my heart ❤️</button>
+      <div id="finalMessage">
+        <div class="divider"></div>
+        <h2 class="script" style="font-size:42px">I choose you, Mahii 💗</h2>
+        <p>On the happy days, the silly days and all the ordinary days in between.</p>
+        <p style="margin-top:12px">I want more laughs, more hugs, more memories and many more beautiful moments with you.</p>
+        <p style="color:#ff7896;margin-top:18px">Happy Girlfriend's Day, BUBU BBY CUTU! 🥹❤️</p>
+        <div style="font-size:35px;margin-top:15px">💋 💗 🫂</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- THE BIG FINAL LETTER -->
+<section id="bigLetterSection">
+  <div class="content big-letter-wrap">
+    <div class="eyebrow">The biggest piece of my heart</div>
+    <h2>Just for <span class="script">Mahiii</span> 💌</h2>
+    <p>Save this little moment and open the letter made just for you.</p>
+    <button class="btn" id="bigLetterButton" onclick="toggleBigLetter()">
+      Open my biggest letter 💗
+    </button>
+
+    <article class="big-letter" id="bigLetter">
+      <h3>Mahiii Bby 💗</h3>
+      <p>
+        I really love you the most. I know we're still young,
+        but I genuinely want to spend my whole life with you.
+        I really want this relationship to work out, and I know
+        you're also trying your best from your side. I'm so
+        grateful for that. 🥹
+      </p>
+      <p>
+        You're going to be one of my best and cutest memories,
+        and I really loveee youu sooo, soo much. I know I'm
+        possessive sometimes, but tu evdii cuteee ahesss! 💗
+      </p>
+      <p>
+        Kal pn majhya var chidlis, and I was like, what can I do?
+        I was making this for you, that's why I was ignoring you.
+        Like, uk, I was online, but I was just checking ideas
+        and all on Insta. I know maine galti krdi reply nhi deke,
+        and I'm genuinely sorry for that. I hope tu ajun pn
+        chidli nhiyes. 😭
+      </p>
+      <p>
+        Ani I'm coming to meet you today after your Akash,
+        so be ready! I'd love to sit and talk with you.
+        I just love seeing you. You're sooo good, and I'm
+        really, really happy to have you.
+      </p>
+      <p>
+        After these whole 17 years, I'm genuinely so happy.
+        I don't think I've ever been this happy in my life.
+        Thank you soo much for changing me and bringing
+        so much happiness into my life. ❤️
+      </p>
+      <p>
+        AND HAPPY GIRLFRIEND'S DAYYY BBYYYYYY!! 💐
+        I LOVEEEEE YOUUUU SOOOO MUCHHH, BUBUUU CUTUUU MAHIII!!
+      </p>
+      <p>
+        The nicknames I give you aren't even enough.
+        I justtttt can't express any more how much I LOVEEEE
+        YOUUU. You're so special to me, Bubu. Always remember that. 🫶
+      </p>
+      <div class="letter-end">I love you endlessly, Bubu Cutu ❤️</div>
+      <div class="date-note">MADE WITH ALL MY LOVE · FOR MAHIII</div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  Made with all my love for Mahii ❤️<br>
+  A little piece of my heart, just for you.
+</footer>
+
+<script>
+function goTo(id) {
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+function openLetter() {
+  const env = document.getElementById("envelope");
+  const letter = document.getElementById("letter");
+  if (letter.style.display === "block") {
+    letter.style.display = "none";
+    env.classList.remove("open");
+  } else {
+    env.classList.add("open");
+    letter.style.display = "block";
+  }
+}
+
+
+function toggleBigLetter() {
+  const letter = document.getElementById("bigLetter");
+  const button = document.getElementById("bigLetterButton");
+  const isOpen = letter.style.display === "block";
+  letter.style.display = isOpen ? "none" : "block";
+  button.textContent = isOpen ? "Open my biggest letter 💗" : "Close my letter 💌";
+  if (!isOpen) {
+    burstHearts();
+    setTimeout(() => letter.scrollIntoView({behavior:"smooth", block:"start"}), 100);
+  }
+}
+
+function showTreat(kind) {
+  const messages = {
+    flower: "🌷 A pretty flower for the prettiest girl. If I could, I'd fill your whole room with them, Bubu! 💐",
+    cake: "🧁 One sweet cupcake for my sweetest girl. But you're still the sweetest thing here! 🍓",
+    bear: "🧸 A cuddly teddy to keep you company whenever I'm not around. Give it a big squeeze from me! 🫂",
+    star: "⭐ Make a little wish, Bubu. I hope your days are full of smiles, cozy moments and all the happiness you deserve. 💫"
+  };
+  document.getElementById("treatText").textContent = messages[kind];
+  document.getElementById("treatMessage").style.display = "block";
+  burstHearts();
+}
+
+function giveHug() {
+  document.getElementById("hugMessage").style.display = "block";
+  burstHearts();
+}
+function openGift() {
+  const msg = document.getElementById("giftMessage");
+  msg.style.display = msg.style.display === "block" ? "none" : "block";
+  if (msg.style.display === "block") burstHearts();
+}
+function revealFinal() {
+  const msg = document.getElementById("finalMessage");
+  msg.style.display = "block";
+  msg.scrollIntoView({behavior:"smooth",block:"nearest"});
+  burstHearts();
+}
+function makeHeart() {
+  const h = document.createElement("span");
+  h.className = "heart";
+  h.textContent = ["♥","❤","💕","💗","💖"][Math.floor(Math.random()*5)];
+  h.style.left = Math.random()*100 + "%";
+  h.style.fontSize = (12+Math.random()*24) + "px";
+  h.style.animationDuration = (5+Math.random()*5) + "s";
+  document.getElementById("hearts").appendChild(h);
+  setTimeout(() => h.remove(), 10000);
+}
+setInterval(makeHeart, 650);
+function burstHearts() {
+  for (let i=0; i<25; i++) setTimeout(makeHeart, i*100);
+}
+</script>
+</body>
+</html>
